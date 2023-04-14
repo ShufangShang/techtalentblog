@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class BlogPostController {
+
+    private BlogPost blogPost;
+    
     @Autowired
     private BlogPostRepository blogPostRepository;
 
@@ -16,7 +19,7 @@ public class BlogPostController {
         return "blogpost/index";
     }
 
-    private BlogPost blogPost;
+   
 
     @PostMapping(value="/")
     public String addNewBlogPost(BlogPost blogPost, Model model) {
