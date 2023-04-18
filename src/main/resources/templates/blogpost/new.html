@@ -4,7 +4,7 @@
 	<title>Create a New Blog</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <!-- Latest compiled and minified CSS -->
-	    <link href="../../webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <div th:replace="/fragments/styling :: head-style" ></div>
 </head>
 	<body>
         <div th:replace="fragments/navbar :: navbar" ></div>
@@ -26,7 +26,6 @@
             <button class="btn btn-primary">Submit Your Post</button>
         </form>
     </div>
-	<script src="../../webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="../../webjars/jquery/1.9.1/jquery.min.js"></script>
+	<div th:replace="/fragments/styling :: body-links" ></div>
 </body>
 </html>

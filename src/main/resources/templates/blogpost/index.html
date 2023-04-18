@@ -4,8 +4,7 @@
 	<title>Blog Site</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <!-- Latest compiled and minified CSS -->
-	<link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/standard.css" rel="stylesheet">
+	<div th:replace="/fragments/styling :: head-style" ></div>
 </head>
 <body>
 <div th:replace="fragments/navbar :: navbar" ></div>  
@@ -26,24 +25,22 @@
                         <div class="panel-footer">
                             <!-- Link to Update -->
                             <!-- Link to Show  -->
-                            <!--  Link to Destroy -->
-                            Buttons
+                            <!--  Link to Destroy -->                           
+                           <form action="#" th:action="@{'/blogposts/{id}'(id=${blog.id})}" th:method="delete"
+                                class="form-horizontal">
+                            <div class="form-group">
+                            <input type="hidden" name="_method" value="delete"/>
+                            <button type="submit" class="btn btn-danger btn-block" th:text="Delete">Delete</button>
+                            </div>
+                        </form>                           
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- <a th:href="@{/blogposts/new}"><button class="btn btn-primary">Submit a New Blog Post</button></a> -->
-        <form action="#" th:action="@{'/blogposts/{id}'(id=${blog.id})}" th:method="delete"
-                            class="form-horizontal">
-            <div class="form-group">
-                <input type="hidden" name="_method" value="delete"/>
-                <button type="submit" class="btn btn-danger btn-block" th:text="Delete">Delete</button>
-            </div>
-        </form>
+       <a th:href="@{/blogposts/new}"><button class="btn btn-primary">Submit a New Blog Post</button></a>
     </div>
-	<script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+    <div th:replace="/fragments/styling :: body-links" ></div>
 </body>
 </html>
