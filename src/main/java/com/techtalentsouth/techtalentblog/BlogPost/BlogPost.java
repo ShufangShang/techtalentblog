@@ -54,9 +54,17 @@ public class BlogPost {
         return "BlogPost [id=" + id + ", title=" + title + ", author=" + author + ", blogEntry=" + blogEntry + "]";
     }
 
-    public Object getId() {
-        return null;
+    public Long getId() {
+        return id;
     }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    /* public Object getId() {
+        return null;
+    } */
 
 	
 }
